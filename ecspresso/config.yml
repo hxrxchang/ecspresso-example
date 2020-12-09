@@ -1,0 +1,6 @@
+region: ap-northeast-1
+cluster: ecspresso-example
+service: next
+service_definition: ecspresso/ecs-service-def.json
+task_definition: ecspresso/ecs-task-def.json
+timeout: 5m

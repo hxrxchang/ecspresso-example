@@ -1,3 +1,3 @@
-resource "aws_ecs_cluster" "ecspresso-example" {
-  name = "ecspresso-example"
+resource "aws_ecs_cluster" "ecspresso_example" {
+  name = "ecspresso_example"
 }

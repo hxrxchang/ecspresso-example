@@ -25,3 +25,13 @@ resource "aws_security_group_rule" "ecspresso_example_alb_http" {
 
   security_group_id = aws_security_group.ecspresso_example_alb.id
 }
+
+resource "aws_security_group_rule" "ecspresso_example_web_http" {
+  type = "ingress"
+  from_port = 3000
+  to_port   = 3000
+  protocol  = "tcp"
+
+  security_group_id = aws_security_group.ecspresso_example_web.id
+  source_security_group_id =aws_security_group.ecspresso_example_alb.id
+}

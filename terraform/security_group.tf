@@ -35,3 +35,23 @@ resource "aws_security_group_rule" "ecspresso_example_web_http" {
   security_group_id = aws_security_group.ecspresso_example_web.id
   source_security_group_id =aws_security_group.ecspresso_example_alb.id
 }
+
+resource "aws_security_group_rule" "ecspresso_example_web_sg_out_all" {
+  type        = "egress"
+  cidr_blocks = ["0.0.0.0/0"]
+  from_port   = 0
+  to_port     = 0
+  protocol    = "-1"
+
+  security_group_id = aws_security_group.ecspresso_example_web.id
+}
+
+resource "aws_security_group_rule" "ecspresso_example_alb_sg_out_all" {
+  type        = "egress"
+  cidr_blocks = ["0.0.0.0/0"]
+  from_port   = 0
+  to_port     = 0
+  protocol    = "-1"
+
+  security_group_id = aws_security_group.ecspresso_example_alb.id
+}

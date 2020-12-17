@@ -31,7 +31,7 @@
   ],
   "cpu": "256",
   "executionRoleArn": "{{ must_env `EXECUTION_ROLE_ARN` }}",
-  "family": "{{ must_env `PROJECT_NAME` }}_{{ must_env `ECS_SERVICE_NAME` }}",
+  "family": "{{ must_env `TF_VAR_project_name` }}_{{ must_env `ECS_SERVICE_NAME` }}",
   "memory": "512",
   "networkMode": "awsvpc",
   "placementConstraints": [],

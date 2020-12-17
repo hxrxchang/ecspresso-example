@@ -1,5 +1,5 @@
-export PROJECT_NAME="ecspresso_example"
-export ECS_SERVICE_NAME=""
+export TF_VAR_PROJECT_NAME="ecspresso_example"
+export TF_VAR_ECS_SERVICE_NAME=""
 export TARGET_GROUP_ARN=""
 export SECURITY_GROUP=""
 export SUBNET_A=""

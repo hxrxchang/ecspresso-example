@@ -6,7 +6,7 @@ resource "aws_subnet" "public_subnet_a" {
   cidr_block = "10.0.1.0/24"
 
   tags = {
-    Name = "ecspresso-example-public-subnet-a"
+    Name = "${var.PROJECT_NAME}-public-subnet-a"
   }
 }
 
@@ -18,7 +18,7 @@ resource "aws_subnet" "private_subnet_a" {
   cidr_block = "10.0.2.0/24"
 
   tags = {
-    Name = "ecspresso-example-private-subnet-a"
+    Name = "${var.PROJECT_NAME}-private-subnet-a"
   }
 }
 
@@ -30,7 +30,7 @@ resource "aws_subnet" "public_subnet_c" {
   cidr_block = "10.0.3.0/24"
 
   tags = {
-    Name = "ecspresso-example-public-subnet-c"
+    Name = "${var.PROJECT_NAME}-public-subnet-c"
   }
 }
 
@@ -42,6 +42,6 @@ resource "aws_subnet" "private_subnet_c" {
   cidr_block = "10.0.4.0/24"
 
   tags = {
-    Name = "ecspresso-example-private-subnet-c"
+    Name = "${var.PROJECT_NAME}-private-subnet-c"
   }
 }

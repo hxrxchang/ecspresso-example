@@ -1,18 +1,18 @@
 resource "aws_security_group" "ecspresso_example_web" {
-  name = "ecspresso-example-web"
+  name = "${var.PROJECT_NAME}-web"
   description = "allow http from alb"
   vpc_id = aws_vpc.ecspresso_example.id
   tags = {
-    Name = "ecspresso-example-web"
+    Name = "${var.PROJECT_NAME}-web"
   }
 }
 
 resource "aws_security_group" "ecspresso_example_alb" {
-  name = "ecspresso-example-alb"
+  name = "${var.PROJECT_NAME}-alb"
   description = "allow access from internet for alb"
   vpc_id = aws_vpc.ecspresso_example.id
   tags = {
-    Name = "ecspresso-example-alb"
+    Name = "${var.PROJECT_NAME}-alb"
   }
 }
 

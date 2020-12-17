@@ -1,14 +1,14 @@
 resource "aws_eip" "private_subnet_a" {
   vpc = true
   tags = {
-    Name = "ecspresso-example-private-subnet-a"
+    Name = "${var.PROJECT_NAME}-private-subnet-a"
   }
 }
 
 resource "aws_eip" "private_subnet_c" {
   vpc = true
   tags = {
-    Name = "ecspresso-example-private-subnet-c"
+    Name = "${var.PROJECT_NAME}-private-subnet-c"
   }
 }
 
@@ -17,7 +17,7 @@ resource "aws_nat_gateway" "private_subnet_a" {
   allocation_id = aws_eip.private_subnet_a.id
 
   tags = {
-    Name = "ecspresso-example-private-subnet-a"
+    Name = "${var.PROJECT_NAME}-private-subnet-a"
   }
 }
 
@@ -26,6 +26,6 @@ resource "aws_nat_gateway" "private_subnet_c" {
   allocation_id = aws_eip.private_subnet_c.id
 
   tags = {
-    Name = "ecspresso-example-private-subnet-c"
+    Name = "${var.PROJECT_NAME}-private-subnet-c"
   }
 }

@@ -1,5 +1,5 @@
-resource "aws_ecr_repository" "ecspresso_example" {
-  name                 = "ecspresso_example"
+resource "aws_ecr_repository" "ecspresso_example_web" {
+  name                 = "${var.PROJECT_NAME}-${var.ECS_SERVICE_NAME}"
   image_tag_mutability = "MUTABLE"
 
   image_scanning_configuration {

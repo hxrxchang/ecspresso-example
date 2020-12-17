@@ -1,21 +1,21 @@
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.ecspresso_example.id
   tags = {
-    Name = "public-subnet-route-table"
+    Name = "${var.PROJECT_NAME}-public-subnet-route-table"
   }
 }
 
 resource "aws_route_table" "private_subnet_a" {
   vpc_id = aws_vpc.ecspresso_example.id
   tags = {
-    Name = "private-subnet-a-route-table"
+    Name = "${var.PROJECT_NAME}-private-subnet-a-route-table"
   }
 }
 
 resource "aws_route_table" "private_subnet_c" {
   vpc_id = aws_vpc.ecspresso_example.id
   tags = {
-    Name = "private-subnet-c-route-table"
+    Name = "${var.PROJECT_NAME}-private-subnet-c-route-table"
   }
 }
 

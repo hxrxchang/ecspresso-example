@@ -10,3 +10,11 @@ terraform {
     key = "ecspresso-example"
   }
 }
+
+variable PROJECT_NAME {
+  type = string
+}
+
+variable ECS_SERVICE_NAME {
+  type = string
+}

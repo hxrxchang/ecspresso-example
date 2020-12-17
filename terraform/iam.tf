@@ -10,7 +10,7 @@ data "aws_iam_policy_document" "ecs_tasks_execution_role" {
 }
 
 resource "aws_iam_role" "ecs_tasks_execution_role" {
-  name = "ecspresso-example-ecs-task-execution-role"
+  name = "${var.PROJECT_NAME}-ecs-task-execution-role"
   assume_role_policy = data.aws_iam_policy_document.ecs_tasks_execution_role.json
 }
 

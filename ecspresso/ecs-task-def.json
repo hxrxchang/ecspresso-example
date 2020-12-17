@@ -18,7 +18,7 @@
       },
       "memoryReservation": 512,
       "mountPoints": [],
-      "name": "web",
+      "name": "{{ must_env `ECS_SERVICE_NAME` }}",
       "portMappings": [
         {
           "containerPort": 3000,
@@ -31,7 +31,7 @@
   ],
   "cpu": "256",
   "executionRoleArn": "{{ must_env `EXECUTION_ROLE_ARN` }}",
-  "family": "{{ must_env `FAMILY` }}",
+  "family": "{{ must_env `PROJECT_NAME` }}_{{ must_env `ECS_SERVICE_NAME` }}",
   "memory": "512",
   "networkMode": "awsvpc",
   "placementConstraints": [],

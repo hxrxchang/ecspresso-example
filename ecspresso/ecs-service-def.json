@@ -13,7 +13,7 @@
   "launchType": "FARGATE",
   "loadBalancers": [
     {
-      "containerName": "web",
+      "containerName": "{{ must_env `ECS_SERVICE_NAME` }}",
       "containerPort": 3000,
       "targetGroupArn": "{{ must_env `TARGET_GROUP_ARN` }}"
     }

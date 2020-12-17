@@ -1,0 +1,40 @@
+{
+  "containerDefinitions": [
+    {
+      "command": [],
+      "cpu": 256,
+      "entryPoint": [],
+      "environment": [],
+      "essential": true,
+      "image": "{{ must_env `DOCKER_IMAGE` }}",
+      "links": [],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "{{ must_env `CLOUDWATCH_LOG_GROUP` }}",
+          "awslogs-region": "ap-northeast-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "memoryReservation": 512,
+      "mountPoints": [],
+      "name": "web",
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 3000,
+          "protocol": "tcp"
+        }
+      ],
+      "volumesFrom": []
+    }
+  ],
+  "cpu": "256",
+  "executionRoleArn": "{{ must_env `EXECUTION_ROLE_ARN` }}",
+  "family": "{{ must_env `FAMILY` }}",
+  "memory": "512",
+  "networkMode": "awsvpc",
+  "placementConstraints": [],
+  "requiresCompatibilities": ["FARGATE"],
+  "volumes": []
+}

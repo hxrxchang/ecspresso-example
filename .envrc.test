@@ -1,0 +1,8 @@
+export TARGET_GROUP_ARN=""
+export SECURITY_GROUP=""
+export SUBNET_A=""
+export SUBNET_C=""
+export DOCKER_IMAGE=""
+export CLOUDWATCH_LOG_GROUP=""
+export EXECUTION_ROLE_ARN=""
+export FAMILY=""

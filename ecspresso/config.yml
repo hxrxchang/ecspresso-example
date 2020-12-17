@@ -1,8 +1,6 @@
 region: ap-northeast-1
 cluster: ecspresso_example
 service: web
-service_definition: secrets/ecs-service-def.json
-task_definition: secrets/ecs-task-def.json
-# service_definition: ecs-service-def.json
-# task_definition: ecs-task-def.json
+service_definition: ecs-service-def.json
+task_definition: ecs-task-def.json
 timeout: 5m

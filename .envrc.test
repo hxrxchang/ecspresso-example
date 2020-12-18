@@ -1,4 +1,4 @@
-export TF_VAR_PROJECT_NAME="ecspresso_example"
+export TF_VAR_PROJECT_NAME="ecspresso-example"
 export TF_VAR_ECS_SERVICE_NAME="web"
 export TARGET_GROUP_ARN="作成されたターゲットグループのarnをここに入れてください"
 export SECURITY_GROUP="作成されたECS用のセキュリティグループのidをここに入れてください"

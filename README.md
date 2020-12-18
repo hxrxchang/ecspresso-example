@@ -9,7 +9,7 @@ ALB 経由で、Fargate で動いている Next.js アプリケーションに�
   - 強めの IAM ユーザーを設定してください。
 - [terraform](https://www.terraform.io/)
 - tf-state を管理するための S3 バケット
-- ecspresso
+- [ecspresso](https://github.com/kayac/ecspresso)
   - インストールは https://zenn.dev/fujiwara/articles/b86d91f42af150 を参照してください。
 - [direnv](https://github.com/direnv/direnv)
 
@@ -38,4 +38,6 @@ direnv allow
 
 この時点では ECS 関連のリソースは、ECS クラスターと ECR のみが作成されていて、ECS サービスと ECS タスクは後で実行する`ecspresso create`で作成します。
 
-###
+### ECR に image を push
+
+ECR にリポジトリが作成されているので、マネジメントコンソールでそのページを開いて、"プッシュコマンドの表示"で表示される通りコマンドを実行してください。

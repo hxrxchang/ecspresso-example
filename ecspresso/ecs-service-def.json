@@ -15,14 +15,19 @@
     {
       "containerName": "{{ must_env `TF_VAR_ECS_SERVICE_NAME` }}",
       "containerPort": 3000,
-      "targetGroupArn": "{{ must_env `TARGET_GROUP_ARN` }}"
+      "targetGroupArn": "{{ tfstate `aws_lb_target_group.ecs_web.arn` }}"
     }
   ],
   "networkConfiguration": {
     "awsvpcConfiguration": {
       "assignPublicIp": "DISABLED",
-      "securityGroups": ["{{ must_env `SECURITY_GROUP` }}"],
-      "subnets": ["{{ must_env `SUBNET_A` }}", "{{ must_env `SUBNET_C` }}"]
+      "securityGroups": [
+        "{{ tfstate `aws_security_group.ecspresso_example_ecs_web.id` }}"
+      ],
+      "subnets": [
+        "{{ tfstate `aws_subnet.private_subnet_a.id` }}",
+        "{{ tfstate `aws_subnet.private_subnet_c.id` }}"
+      ]
     }
   },
   "placementConstraints": [],

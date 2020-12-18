@@ -1,9 +1,9 @@
-resource "aws_security_group" "ecspresso_example_web" {
-  name = "${var.PROJECT_NAME}-web"
+resource "aws_security_group" "ecspresso_example_ecs_web" {
+  name = "${var.PROJECT_NAME}-ecs-web"
   description = "allow http from alb"
   vpc_id = aws_vpc.ecspresso_example.id
   tags = {
-    Name = "${var.PROJECT_NAME}-web"
+    Name = "${var.PROJECT_NAME}-ecs-web"
   }
 }
 
@@ -32,7 +32,7 @@ resource "aws_security_group_rule" "ecspresso_example_web_http" {
   to_port   = 3000
   protocol  = "tcp"
 
-  security_group_id = aws_security_group.ecspresso_example_web.id
+  security_group_id = aws_security_group.ecspresso_example_ecs_web.id
   source_security_group_id =aws_security_group.ecspresso_example_alb.id
 }
 
@@ -43,7 +43,7 @@ resource "aws_security_group_rule" "ecspresso_example_web_sg_out_all" {
   to_port     = 0
   protocol    = "-1"
 
-  security_group_id = aws_security_group.ecspresso_example_web.id
+  security_group_id = aws_security_group.ecspresso_example_ecs_web.id
 }
 
 resource "aws_security_group_rule" "ecspresso_example_alb_sg_out_all" {

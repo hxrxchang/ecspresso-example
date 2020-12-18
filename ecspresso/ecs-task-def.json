@@ -18,7 +18,7 @@
       },
       "memoryReservation": 512,
       "mountPoints": [],
-      "name": "{{ must_env `ECS_SERVICE_NAME` }}",
+      "name": "{{ must_env `TF_VAR_ECS_SERVICE_NAME` }}",
       "portMappings": [
         {
           "containerPort": 3000,
@@ -31,7 +31,7 @@
   ],
   "cpu": "256",
   "executionRoleArn": "{{ must_env `EXECUTION_ROLE_ARN` }}",
-  "family": "{{ must_env `TF_VAR_project_name` }}_{{ must_env `ECS_SERVICE_NAME` }}",
+  "family": "{{ must_env `TF_VAR_PROJECT_NAME` }}_{{ must_env `TF_VAR_ECS_SERVICE_NAME` }}",
   "memory": "512",
   "networkMode": "awsvpc",
   "placementConstraints": [],

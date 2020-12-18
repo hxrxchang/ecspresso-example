@@ -1,5 +1,5 @@
 region: ap-northeast-1
-cluster: ecspresso_example
+cluster: ecspresso-example
 service: web
 service_definition: ecs-service-def.json
 task_definition: ecs-task-def.json

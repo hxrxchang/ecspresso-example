@@ -41,3 +41,24 @@ direnv allow
 ### ECR に image を push
 
 ECR にリポジトリが作成されているので、マネジメントコンソールでそのページを開いて、"プッシュコマンドの表示"で表示される通りコマンドを実行してください。
+
+### 環境変数定義 2
+
+`.encrc`に各 AWS リソースの id や arn などを入れるように修正してください。
+
+### ECS サービスの作成
+
+```
+ecspresso create --config ecspresso/config.yml
+```
+
+### ECS デプロイ
+
+```
+ecspresso deploy --config ecspresso/config.yml
+```
+
+### 確認
+
+- マネジメントコンソールで作成した ECS サービスを開き、タスクのステータスが"RUNNING"になっていることを確認します。
+- マネジメントコンソールで作成した ALB を開き、その DNS 名をブラウザで開いて Next.js のスターター画面が開いたら動作確認 OK です。
